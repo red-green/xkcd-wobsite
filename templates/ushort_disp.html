@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}URL Shortener result{% endblock %}
+{% block body %}
+<p>
+<a href='{{old}}'>{{old}}</a>
+<br/>
+Has been shortened to 
+<br/>
+<a href='/url/{{new}}'>http://xkcd3.com/url/{{new}}</a>
+</p>
+{% endblock %}

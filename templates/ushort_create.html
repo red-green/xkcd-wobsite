@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}URL Shortener{% endblock %}
+{% block body %}
+<h4>UShort</h4>
+<p>Use this to shorten URLs</p>
+<br/>
+<form action="/url" method='POST'>
+<span>URL to shorten: </span><input name='data' style="width: 480px;" type='text'/>
+<br/>
+<input type='submit'/>
+</form>
+{% endblock %}

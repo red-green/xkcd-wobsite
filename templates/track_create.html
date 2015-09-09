@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Tracking{% endblock %}
+{% block body %}
+<h4>WebTracking</h4>
+<p>Use this to track web usage in an easy way. Simply embed the image and you can check usage periodically with the link.</p>
+<br/>
+<form action="/track" method='POST'>
+<input type='submit' value='New tracker'/>
+</form>
+{% if thash %}
+<p>
+Image:
+<a href='/track/{{thash}}.png'>http://xkcd3.com/track/{{thash}}.png</a>
+<br/>
+Tracking info:
+<a href='/track/{{thash}}'>http://xkcd3.com/track/{{thash}}</a>
+</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta name="google-site-verification" content="NJOpJxKO78fTMjGIvBRJpZB7oYvalD5-LYj5VzhdQ40" />
+<title>xkcd: {% block title %}{% endblock %}</title>
+<style type='text/css'>
+body {
+   color: #000000;
+   background-color: #8596bf;
+   font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+.body {
+   width: 800px;
+   horizontal-align: middle;
+}
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   padding: 5px 10px;
+   border-radius: 8px;
+   color: white;
+   font-size: 14px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+.box {
+	background:white;
+	border-style:solid;
+	border-width:1.5px;
+	border-color:#071419;
+	border-radius: 12px;
+	padding: 12px;
+	-moz-border-radius: 12px;
+	margin-bottom: 8px;
+}
+tr td {
+	border-right: 1px solid #ccc;
+	padding: 4px
+}
+tr td:last-child {
+	border-right: 0px;
+}
+a {
+	color: #554;
+	text-decoration: none;
+	font-weight:800;
+}
+.tab {
+	display:none;
+}
+
+h1, h2 {
+	margin-top:6px;
+	margin-bottom:6px;
+}
+p {
+	margin-top:6px;
+	margin-bottom:6px;
+}
+img {
+	margin-top:6px;
+	margin-bottom:6px;
+}
+.comics {
+	padding-left:50px;
+	padding-right:50px;
+}
+</style>
+<script type='text/javascript'>
+function showTab(tabId) {
+	var slides = document.getElementsByClassName("tab");
+	for(var i = 0; i < slides.length; i++)
+	{
+	   slides.item(i).style.display = "none";
+	}
+	document.getElementById(tabId).style.display = "block";
+}
+</script>
+</head>
+<body>
+<center>
+<div class='body'>
+<div class='header'>
+<div class='box'>
+<a href="/">
+<h1>XKCD: a webcomic</h1>
+</a>
+<table>
+<tr>
+	<td>
+	<a class='button' href='/'>Home</a>
+	</td>
+	<td>
+	<a class='button' href='/about/'>About</a>
+	</td>
+	<td>
+	<a class='button' href='http://xkcd.com/'>xkcd.com</a>
+	</td>
+	<td>
+	<a class='button' href='/stuff/'>Other Stuff</a>
+	</td>
+	<td>
+	<div style='vertical-align:center;'>
+	<form action='/search' method='get'>
+	<input type='text' name='q'/>
+	<input type='submit' value='Search'/>
+	</form>
+	</div>
+	</td>
+</tr>
+</table>
+</div>
+</div>
+<div class='box'>
+{% block body %}{% endblock %}
+</div>
+</div>
+</center>
+</body>
+</html>

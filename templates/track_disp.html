@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Tracking{% endblock %}
+{% block body %}
+<h4>Tracking data</h4>
+<p>Stats for the image <a href='/track/{{tid}}.png'>http://xkcd3.com/track/{{tid}}.png</a></p>
+<br/>
+<p>{{hits}} hits</p>
+{% endblock %}

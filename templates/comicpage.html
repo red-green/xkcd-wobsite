@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block body %}
+<h2>{{title|safe}}</h2>
+<p>{{news|safe}}</p>
+<p><a class='button' href='/1'>|<</a> <a class='button' href='/{{id-1}}'><</a> <a class='button' href='/random'>Random</a> <a class='button' href='/{{id+1}}'>></a> <a class='button' href='/'>>|</a></p>
+	{% if imglink != "" %}
+	<a target="_blank" href='{{imglink}}'>
+	{% endif %}
+	<img src='{{img}}' title='{{alt}}'/><br/>
+	{% if imglink != "" %}
+	<p>Image link</p>
+	</a>
+	{% endif %}
+	<p><b>Alt: </b>{{alt}}</p>
+	<p><a class='button' href='/1'>|<</a> <a class='button' href='/{{id-1}}'><</a> <a class='button' href='/random'>Random</a> <a class='button' href='/{{id+1}}'>></a> <a class='button' href='/'>>|</a></p>
+	<p><b>Posted on:</b> {{date}}</p>
+	<table><tr>
+	<td><a class='button' target="_blank" href='http://www.explainxkcd.com/{{id}}'>Explain it!</a></td>
+	<td><a class='button' target="_blank" href='http://xkcd.com/{{id}}'>On the official site</a></td>
+	<td><a class='button' target="_blank" href='http://google.com/search?q={{title}}'>Google it!</a></td>
+	</tr></table>
+	</div><div class='box'>
+	<table><tr>
+	<td><a class='button' href="javascript:showTab('trans')">Transcript</a></td>
+	<td><a class='button' href="javascript:showTab('comments')">Comments</a></td>
+	<td><a class='button' href="javascript:showTab('stats')">Statistics</a></td>
+	</tr></table>
+	<div class='tab' id='trans'>
+	<p><b>Transcript: </b><br/>{{trans|safe}}</p>
+	</div>
+	<div class='tab' id='comments' style='display:block;'>
+	<b>Comments:</b><br/>
+	<div class='comments'>
+	{% if comments %}
+	{% for i in comments %}
+	<p align='left'><b>{{i[1]}}</b><br/>{{i[2]}}</p>
+	{% endfor %}
+	{% endif %}
+	<br/>
+	<form action='/addcomment' method='POST'>
+		<input type='hidden' name='num' value='{{id}}'/>
+		<textarea name='comm' rows='3' cols='80'></textarea><br/>
+		Name:
+		<input type='text' name='name'/>
+		<input type='submit' value='Add comment'/>
+	</form>
+	</div>
+	</div>
+	<div class='tab' id='stats'>
+	<p>3.14159 visitors</p>
+	</div>
+	<br/>
+{% endblock %}

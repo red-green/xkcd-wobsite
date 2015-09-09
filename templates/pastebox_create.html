@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}PasteBox{% endblock %}
+{% block body %}
+<h4>PasteBox</h4>
+<p>Use this to upload code or other snippets</p>
+<br/>
+<form action="/paste" method='POST'>
+<textarea name='data' rows='40' cols='85'></textarea>
+<br/>
+<input type='submit'/>
+</form>
+{% endblock %}
